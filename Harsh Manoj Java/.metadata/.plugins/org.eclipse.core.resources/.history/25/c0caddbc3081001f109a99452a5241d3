@@ -1,0 +1,14 @@
+package Java_2D;
+
+public class Array2D {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[][]=new int [2][2];
+		System.out.println("1)Accept Numbers \n2)Display Numbers \n3)Addition \nChoice:");
+		Array2DServices.AcceptData(arr);
+		Array2DServices.DisplayData(arr);
+
+	}
+
+}

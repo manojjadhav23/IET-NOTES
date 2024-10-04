@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class ArrayServices {
+
+	public static void acceptdata(int[] arr) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Numbers");
+		for(int i=0;i<5;i++) {
+			int a=sc.nextInt();
+		}
+	}
+
+	public static void displaydata(int[] arr) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<5;i++) {
+			System.out.println(i+":"+arr);
+		}
+		
+	}
+
+}
