@@ -1,0 +1,38 @@
+package com.demo.beans;
+
+public class MasterStudent {
+	private String thesissub,degree;
+	private int thesismarks;
+	public MasterStudent() {
+		super();
+	}
+	public MasterStudent(String thesissub, String degree, int thesismarks) {
+		super();
+		this.thesissub = thesissub;
+		this.degree = degree;
+		this.thesismarks = thesismarks;
+	}
+	public String getThesissub() {
+		return thesissub;
+	}
+	public void setThesissub(String thesissub) {
+		this.thesissub = thesissub;
+	}
+	public String getDegree() {
+		return degree;
+	}
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+	public int getThesismarks() {
+		return thesismarks;
+	}
+	public void setThesismarks(int thesismarks) {
+		this.thesismarks = thesismarks;
+	}
+	@Override
+	public String toString() {
+		return "MasterStudent [thesissub=" + thesissub + ", degree=" + degree + ", thesismarks=" + thesismarks + "]";
+	}
+	
+}

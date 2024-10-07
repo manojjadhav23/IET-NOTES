@@ -1,0 +1,9 @@
+package Team;
+
+public class Team {
+	private int tid;
+	private String tname;
+	private String coach;
+	private Player captain;
+	private Player[] plist;
+}

@@ -1,0 +1,13 @@
+package com.demo.services;
+
+import com.demo.beans.Shape;
+
+public class ShapeServices {
+
+	public static void AcceptData(int choice) {
+		// TODO Auto-generated method stub
+		static Shape[] sarr;
+		
+	}
+
+}

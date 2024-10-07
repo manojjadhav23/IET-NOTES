@@ -1,0 +1,12 @@
+package CLasses;
+
+public class StudentArray {
+	private static Student[] studarr; 
+	private static int cnt;
+	static {
+		studarr=new Student[10];
+		studarr[0]= new Student(33,"Harsh",50,50,50);
+		studarr[1]= new Student(32,"JAdhav",50,50,50);
+		studarr[2]= new Student(23,"Don",50,50,50);
+	}
+}

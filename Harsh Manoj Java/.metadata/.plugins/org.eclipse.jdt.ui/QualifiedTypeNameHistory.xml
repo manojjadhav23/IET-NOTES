@@ -2,8 +2,15 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="ArrayServices"/>
     <fullyQualifiedTypeName name="Java_Practice.ArrayServices"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="Java_2D.Array2DServices"/>
     <fullyQualifiedTypeName name="Array2D_2.Array2D"/>
     <fullyQualifiedTypeName name="Array2D_2.Array2DServices"/>
+    <fullyQualifiedTypeName name="CLasses.StudentArray"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.demo.services.ShapeServices"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.demo.beans.Triangle"/>
+    <fullyQualifiedTypeName name="com.demo.beans.Circle"/>
+    <fullyQualifiedTypeName name="com.demo.beans.Shape"/>
+    <fullyQualifiedTypeName name="com.demo.beans.Rectangle"/>
 </qualifiedTypeNameHistroy>

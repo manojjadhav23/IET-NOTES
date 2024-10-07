@@ -1,0 +1,76 @@
+package CLasses;
+import java.util.*;
+public class StudentArray {
+	private static Student[] studarr; 
+	private static int cnt;
+	static {
+		studarr=new Student[10];
+		studarr[0]= new Student(33,"Harsh",50,50,50);
+		studarr[1]= new Student(32,"JAdhav",50,50,50);
+		studarr[2]= new Student(23,"Don",50,50,50);
+		cnt=3;
+	}
+	public static int DisplayStudent() {
+		for(Student s:studarr) {
+			if(s!=null) {
+		System.out.println(s);
+			}else {
+				break;
+			}
+		}
+			return 0;
+	}
+	public static void AddNewStudent() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter id");
+		int id=sc.nextInt();
+		
+		System.out.println("enter name");
+		String name =sc.next();
+		
+		System.out.println("enter marks1");
+	    float m1 =sc.nextInt();
+		
+		System.out.println("enter marks2");
+		float m2=sc.nextInt();
+		
+	    System.out.println("enter marks3");
+		float m3=sc.nextInt();
+		
+		studarr[cnt]=new Student(id,name,m1,m2,m3);
+		cnt++;
+	}
+	public static void SearchById() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter id for search");
+		int s=sc.nextInt();
+		for(Student s1: studarr) {
+			if(s1!=null) {
+			if(s1.getid()==s) {
+				System.out.println(s1);
+				System.out.println("Id is Found");
+				break;
+			}
+			}
+			else {
+				System.out.println("Id not Found");
+				break;
+			}
+		}
+		
+	}
+	public static Student SearchByName(String s) {
+		for(Student s2:studarr)
+		{    if(s2!=null) {
+			if(s2.getname().equals (s)) {
+				System.out.println(s2);
+				}
+			else {
+				return null;
+			}
+			}
+			
+		}
+		return null;
+	}
+}

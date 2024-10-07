@@ -1,0 +1,6 @@
+package com.demo.beans;
+
+public class MasterStudent {
+	private String thesissub,degree;
+	private int thesismarks;
+}

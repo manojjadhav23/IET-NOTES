@@ -1,0 +1,6 @@
+package com.demo.beans;
+
+abstract public class Shape {
+	public abstract void calArea();
+	public abstract void calPerimeter();
+}

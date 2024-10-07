@@ -1,0 +1,40 @@
+package CLasses;
+import java.util.*;
+public class StudentArray {
+	private static Student[] studarr; 
+	private static int cnt;
+	static {
+		studarr=new Student[10];
+		studarr[0]= new Student(33,"Harsh",50,50,50);
+		studarr[1]= new Student(32,"JAdhav",50,50,50);
+		studarr[2]= new Student(23,"Don",50,50,50);
+		cnt=3;
+	}
+	public static int DisplayStudent() {
+		for(Student s:studarr) {
+			if(s!=null) {
+		System.out.println(s);
+			}else {
+				break;
+			}
+		}
+			return 0;
+	}
+	public static void AddNewStudent() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter id");
+		int s_id=sc.nextInt();
+		
+		System.out.println("enter name");
+		String s_name =sc.next();
+		
+		System.out.println("enter marks1");
+	    int m1 =sc.nextInt();
+		
+		System.out.println("enter marks2");
+		int m2=sc.nextInt();
+		
+	    System.out.println("enter marks3");
+		int m3=sc.nextInt();	
+	}
+}

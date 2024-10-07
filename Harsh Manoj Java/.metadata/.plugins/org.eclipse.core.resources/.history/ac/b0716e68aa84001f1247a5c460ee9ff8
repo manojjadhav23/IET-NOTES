@@ -1,0 +1,17 @@
+package com.demo.test;
+
+import com.demo.beans.Shape;
+import com.demo.beans.Triangle;
+
+public class TestShape {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shape s1 = new Triangle();
+		s1.calArea();
+		s1.calPerimeter();
+		System.out.println(s1);
+
+	}
+
+}

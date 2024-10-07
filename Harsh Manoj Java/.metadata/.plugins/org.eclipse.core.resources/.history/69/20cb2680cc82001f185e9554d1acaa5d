@@ -1,0 +1,6 @@
+package CLasses;
+
+public class StudentArray {
+	private static Student[] studarr; 
+	private static 
+}
