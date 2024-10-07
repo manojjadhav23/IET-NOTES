@@ -1,0 +1,18 @@
+package Array2d;
+
+public class Array_2D {
+
+	public static void main(String[] args) {
+		 int[][] arr=new int[2][2];
+		 
+		 
+	ArrayService.AcceptValue(arr);
+    ArrayService.DisplayValue(arr); 
+		
+				 
+				
+				 
+				 
+	}
+
+}

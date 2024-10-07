@@ -1,0 +1,39 @@
+package Array2d;
+
+import java.util.Scanner;
+
+public class ArrayService {
+
+ 
+	public static void AcceptValue(int[][] arr) {
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("enter array element");
+		 for(int i=0;i<arr.length;i++) {
+			 for(int j=0;j<arr.length;j++)
+			 {
+				 arr[i][j]=sc.nextInt();
+			 }
+		 }
+		 
+		 
+		
+		
+	}
+	 
+	public static void DisplayValue(int[][] arr) {
+		// TODO Auto-generated method stub
+		 for(int i=0;i<arr.length;i++)
+		 {
+			 for(int j=0;j<arr.length;j++)
+			 {
+				 System.out.print(arr[i][j]+"\t");
+			 }
+			 System.out.println();
+		 }
+		
+	}
+	
+	
+	
+	  
+}
