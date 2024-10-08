@@ -8,7 +8,7 @@ public interface Interface1 {
 		for(int i=2;i<n;i++) {
 			f=f*i;
 		}
-		return f;	
+		return f;
 	}
 	default int permutation(int n,int r){
 		System.out.println("in permutation method method");

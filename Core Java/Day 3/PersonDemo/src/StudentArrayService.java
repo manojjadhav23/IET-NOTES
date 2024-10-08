@@ -9,9 +9,9 @@ public class StudentArrayService {
 	private static int cnt;
 	static {
 		perarr=new Student[10];
-		perarr[0]=new Person(12,"Rajan","2222",new Date(2000,04,27));
-		perarr[1]=new Person(13,"Atharva","33333",new Date(1997,04,27));
-		perarr[2]=new Person(14,"Revati","2222",new Date(1997,02,05));
+		perarr[0]=new Person(12,"Rajan","2222",new Date(2000/04/27));
+		perarr[1]=new Person(13,"Atharva","33333",new Date(1997/04/27));
+		perarr[2]=new Person(14,"Revati","2222",new Date(1997/02/05));
 		cnt=3;
 	}
 	
@@ -96,10 +96,9 @@ public class StudentArrayService {
 	public static boolean deleteById(int id) {
 		for(int i=0;i<cnt;i++) {
 			if(perarr[i].getPerid()==id) {
-				//shift objects one location to left to delete
-				//object at ith positition
+				
 				for(int j=i;j<cnt;j++) {
-					perarr[j]=perarr[j+1];   //5    2-->3  3-->4  4-->5
+					perarr[j]=perarr[j+1];   
 				}
 				cnt--;
 				return true;

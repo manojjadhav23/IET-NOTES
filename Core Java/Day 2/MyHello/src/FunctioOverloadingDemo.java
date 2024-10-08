@@ -4,14 +4,14 @@ public class FunctioOverloadingDemo {
 		System.out.println("in add ---byte");
 		return x+y;
 	}
-	/*public static int add(int x,int y) {
-		System.out.println("in add ---int");
-		return x+y;
-	}*/
-	/*public static long add(long x,long y) {
-		System.out.println("in add ---long");
-		return x+y;
-	}*/
+	// public static int add(int x,int y) {
+	// 	System.out.println("in add ---int");
+	// 	return x+y;
+	// }
+	// public static long add(long x,long y) {
+	// 	System.out.println("in add ---long");
+	// 	return x+y;
+	// }
 	public static long add(Integer x,Integer y) {
 		System.out.println("in add ---Integer");
 		return x+y;

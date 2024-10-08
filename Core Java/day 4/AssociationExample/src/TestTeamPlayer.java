@@ -9,16 +9,25 @@ public class TestTeamPlayer {
 		    System.out.println("1. Add a new Team\n2. delete the team\n3. search by tid\n4. search by playerid");
 		    System.out.println("5. delete player from the team\n6. add a new player in the team\n7. display all\n8. exit\nchoice");
 		    choice=sc.nextInt();
+		    
 		    switch(choice) {
 		    case 1:
 		    	TeamService.addNewTeam();
 		    	break;
 		    case 2: 
+		    	System.out.println("enter team id to search");
+		    	int tid=sc.nextInt();
+		    	Team t=TeamService.deleteTeamById(tid);
+		    	if(t!=null) {
+		    		System.out.println("team deleted");
+		    	}else {
+		    		System.out.println("not found");
+		    	}
 		    	break;
 		    case 3:
-		    	System.out.println("enetr team id to search");
-		    	int tid=sc.nextInt();
-		    	Team t=TeamService.findTeamById(tid);
+		    	System.out.println("enter team id to search");
+		    	 tid=sc.nextInt();
+		    	 t=TeamService.findTeamById(tid);
 		    	if(t!=null) {
 		    		System.out.println(t);
 		    	}else {

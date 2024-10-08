@@ -15,7 +15,7 @@ public class Account {
 	
 	
 	public Account() {
-		this.acid=this.acid=generatecode(null);
+		this.acid=generatecode(null);
 		cnt++;
 		name=null;
 		type=null;

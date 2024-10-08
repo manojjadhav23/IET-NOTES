@@ -8,7 +8,7 @@ public class MasterStudent extends Student{
 		
 	}
 	public MasterStudent(int pid, String pname, String address, LocalDate bdate,int[] marks,String thesissub, String degree, int thesismarks) {
-		//calls parametrised constructor
+		        //calls parametrised constructor
 				//use super, then that line has to be the first line of the function
 		super(pid,pname,address,bdate,marks);
 		System.out.println("in MasterStudent parametrized constructor");

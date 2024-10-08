@@ -2,14 +2,14 @@
 public class VariableArguments {
 	public static int add(int x, int y, int ...arr) {
 		int sum= x+y;
-		/*for(int i=0;i<arr.length;i++) {
+		for(int i=0;i<arr.length;i++) {
 			sum+=arr[i];
-		}*/
-		//for each loop added in java 1.5
-		for(int n:arr) { //[10,20,30,40]
-			
-			sum+=n;
 		}
+		//for each loop added in java 1.5
+		// for(int n:arr) { //[10,20,30,40]
+			
+		// 	sum+=n;
+		// }
 		return sum;
 	}
 	public static void main(String[] args) {

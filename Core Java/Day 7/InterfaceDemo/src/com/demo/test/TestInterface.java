@@ -1,19 +1,40 @@
 package com.demo.test;
 
 import com.demo.beans.MyClass;
+import com.demo.beans.MyTestClass;
 import com.demo.interfaces.Interface1;
 import com.demo.interfaces.Intrerface2;
+import com.demo.interfaces.MyFunctionalInterface;
 
 public class TestInterface {
 	public static void main(String[] args) {
-		MyClass ob=new MyClass();
-		ob.combination(5, 2);
-		Interface1 ob1=new MyClass();
-		ob1.combination(4, 2);
+		//using annonymous classes
+		MyFunctionalInterface ob1=new MyFunctionalInterface() {
+			public void m1() {
+				System.out.println("In m1 in MyTestClass");
+			}
+			
+		};
+		//using lambda functions
+		MyFunctionalInterface ob2=()->{
+			System.out.println("In m1 in MyTestClass");
+		};
 		
-		Intrerface2 ob2=new MyClass();
-		ob2.m3(); //directly called because function is present in interface 2
-		((MyClass)ob2).m2(12); //m2 is not present in interface 2 so it called using class
-		ob2.hashCode();		
+		//using a class
+		MyFunctionalInterface ob=new MyTestClass();
+		ob.m1();
+		int a=Intrerface2.i;
+		//Intrerface2.i=45;
+		//System.out.println(Intrerface2.i);
+		MyClass ob5=new MyClass();
+		ob5.combination(5, 2);
+		Interface1 ob11=new MyClass();
+		ob11.combination(4, 2);
+		Intrerface2 ob21=new MyClass();
+		ob21.m3();
+		((MyClass)ob2).m2(12);
+		ob2.hashCode();
+		
 	}
+
 }

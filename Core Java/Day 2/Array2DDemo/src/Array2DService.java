@@ -23,7 +23,7 @@ public class Array2DService {
 				System.out.print(arr[i][j]+"\t");
 			}
 			System.out.println();
-		}
+		}.
 		
 	}
 
