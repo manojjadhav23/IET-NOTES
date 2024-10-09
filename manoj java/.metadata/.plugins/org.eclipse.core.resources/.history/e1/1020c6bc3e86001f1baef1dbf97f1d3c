@@ -1,0 +1,23 @@
+package com.demo.test;
+
+public class String2 {
+	public static void main(String[] args) {
+		
+		String s1="test";
+		s1=s1.concat("abc");
+		
+		s1=s1.replace("test", "manoj");
+		System.out.println(s1);
+		StringBuilder sc=new StringBuilder("test");
+		sc.append("welcone");
+		System.out.println(sc);
+		
+		StringBuffer sb=new StringBuffer("manoj");
+		sb.append("jadhav");
+		System.out.println(sb);
+		
+	    s1="xxx,yy,zz-yy";
+		System.out.println(s1.split(","));
+	
+	}
+}
