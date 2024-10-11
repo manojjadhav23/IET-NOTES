@@ -1,0 +1,48 @@
+package com.demo.service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+import com.demo.dao.StudentDao;
+import com.demo.dao.StudentDaoimpl;
+
+public class StudentServiceimpl implements StudentService{
+	Scanner sc= new Scanner(System.in);
+	StudentDao sd=new StudentDaoimpl();
+
+	@Override
+	public void AddNewStudent(int ch) {
+		int []mks=new int[2];
+		System.out.println("Enter id:");
+		int id=sc.nextInt();
+		System.out.println("Enter Name:");
+		String nm=sc.next();
+		System.out.println("Enter Address:");
+		String addr=sc.next();
+		System.out.println("Enter Birthday:");
+		String bdate=sc.next();
+		LocalDate ldt=LocalDate.parse(bdate,DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		
+		if(ch==0 || ch==1) {
+			System.out.println("Enter Marks of First: ");
+			mks[0]=sc.nextInt();
+			System.out.println("Enter Marks of Second: ");
+			mks[1]=sc.nextInt();
+		}
+		
+		else if(ch==0) {
+			System.out.println("Enter Special Subject Marks:");
+			int splmarks=sc.nextInt();
+		}
+		
+		else if(ch==1) {
+			System.out.println("Enter Thesis Subject:");
+			String sub=sc.next();
+			System.out.println("Enter Thesis Subject Marks:");
+			int smark=sc.nextInt();
+		}
+
+		
+	}
+}

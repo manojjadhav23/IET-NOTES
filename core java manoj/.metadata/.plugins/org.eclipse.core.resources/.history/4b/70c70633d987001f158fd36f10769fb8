@@ -1,0 +1,9 @@
+package com.demo.beans;
+
+public class CurrentAccount extends Account {
+	private int min_transaction;
+	private  float int_rate;
+	private float min_balance;
+	
+
+}

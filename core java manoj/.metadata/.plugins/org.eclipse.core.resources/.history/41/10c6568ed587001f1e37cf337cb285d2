@@ -1,0 +1,20 @@
+package com.demo.beans;
+
+public class CurrentAccount {
+	private int min_transaction;
+	private  float int_rate;
+	private  float min_balance;
+	
+//	static {
+//		int_rate=0.02f;
+//		min_balance=0f;
+//	}
+
+	public CurrentAccount() {
+		super();
+	}
+
+	
+	
+
+}

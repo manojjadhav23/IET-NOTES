@@ -1,0 +1,52 @@
+package com.demo.beans;
+
+public class CurrentAccount {
+	private int min_transaction;
+	private static float int_rate;
+	private static float min_balance;
+	
+	static {
+		int_rate=0.02f;
+		min_balance=0f;
+	}
+
+	
+	public CurrentAccount() {
+		super();
+	}
+	public CurrentAccount(int min_transaction, float int_rate, float min_balance) {
+		super();
+		this.min_transaction = min_transaction;
+		this.int_rate = int_rate;
+		this.min_balance = min_balance;
+	}
+	public int getMin_transaction() {
+		return min_transaction;
+	}
+	public void setMin_transaction(int min_transaction) {
+		this.min_transaction = min_transaction;
+	}
+	public static float getInt_rate() {
+		return int_rate;
+	}
+	public  void setInt_rate(float int_rate) {
+		this.int_rate = int_rate;
+	}
+	public static float getMin_balance() {
+		return min_balance;
+	}
+	public void setMin_balance(float min_balance) {
+		this.min_balance = min_balance;
+	}
+	@Override
+	public String toString() {
+		return "CurrentAccount [min_transaction=" + min_transaction + ", int_rate=" + int_rate + ", min_balance="
+				+ min_balance + "]";
+	}
+
+	
+
+	
+	
+
+}
