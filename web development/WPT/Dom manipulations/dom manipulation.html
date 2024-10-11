@@ -1,0 +1,259 @@
+Dom manipulation
+DOM : Document Object Model
+==>A tree like structure that contains the hierarchy of the tags .
+Whenever browser load html file which contains html elements/tags ,so before displaying data on the browser, browser will prepare tree like structure/model of all the tags for its own use.
+==>to organize each and every element in a better way so that it can be understandable to browser in which sequence elements should be display depending on parent and child relationship,which element is parent or child,
+
+=====================================================================
+==>entire web page is an object
+==>we have to perform certain manipulations on the dom.
+==>dom allows us dynamically  to add new  html elements ,delete/update existing element,to change style ,validations(error msg/success msg),get the content of elements,update the attributes for the elements.
+and it will be reflected on web browser.
+==>DOM related all objects are created automatic by the browser, while loading of webpage
+==>when the page will load,a new dom will be created
+==>dom means the page is currently open and with the help of js code we are modifying dom.
+ex: dynamically remove tr  in table
+
+=====================================================================================
+
+html tags		DOM classes
+-----------			-----------------
+head				HTMLHeadElement	    ==> object		
+p					HTMLParagraphElement  ==> object
+body				HTMLBodyElement
+h2					HTMLHeadingElement
+img					HTMLImageElement
+			etc...
+	document is the base object for all dom objects
+	window is the base object for all JS objects
+each and every html element in js is an object.
+//if we want to perform any operation on any html element  then  we need to get object first.
+//to represent each and every html element in js ,we need 1 object then only we can perform operations on them.
+
+#######get the content of html element(H1 TAG)
+<body>
+<h1 id="myh1">welcome</h1>
+<input type="button" value="get content" onclick="getContent()">
+<script>
+
+function getContent(){
+//get the object of h1 whose id=myh1.
+var refvar = document.getElementById("myh1");//using refvar change the content,change the style,remove the content
+console .log(refvar);
+//to read the content written inside html element we are getting 1 property innerHtml 
+console.log(refvar.innerHtml);
+}
+</script>
+=================================================
+<!DOCTYPE html>
+<html>
+    <head></head>
+<body>
+    <h1 id="myh1">welcome<span>to world</span></h1>
+    <input type="button" value="get content" onclick="getContent()">
+    <script>
+    
+    function getContent(){
+        //get the object of h1 whose id=myh1.
+    var refvar = document.getElementById("myh1");//using refvar change the content,change the style,remove the content
+    console .log(refvar);
+    //to read the content written inside html element we are getting 1 property innerHtml 
+    console.log(refvar.innerHTML);
+    }
+    </script>
+    </body>
+    </html>
+================================================================
+
+<body>
+<h1 id="myh1">welcome <span>to</span> world</h1>
+<input type="button" value="get content" onclick="getContent()">
+<script>
+
+function getContent(){
+//get the object of h1 whose id=myh1.
+var refvar = document.getElementById("myh1");//using refvar change the content,change the style,remove the content
+console .log(refvar);
+//to read the content written inside html element we are getting 1 property innerHtml 
+console.log(refvar.innerText);
+}
+</script>
+===============================================================================
+********Way to change content
+get the content of html element
+<body>
+<h1 id="myh1">welcome <span>to</span> world</h1>
+<input type="button" value="get content" onclick="getContent()">
+<script>
+
+function getContent(){
+//get the object of h1 whose id=myh1.
+var refvar = document.getElementById("myh1");//using refvar change the content,change the style,remove the content
+console .log(refvar);
+//to read the content written inside html element we are getting 1 property innerHtml 
+refvar.innerHtml="updated heading";
+}
+</script>
+===========================================================
+i want to take phonenumber from user. add button to add more textfields
+
+get the content of html element
+<body>
+<input type="text" placeholder="enter phno">
+<input type="button" value="+" onclick="generateField()">
+<div id="container">//we need 1 parent element to add html elements
+</div>
+<script>
+function generateField(){
+const input=document.createElement("input"); //mention the name of html element
+input.setAttribute("type","text");//assign new value to mentioned attribute.
+input.setAttribute("placeholder","enter phone");
+const containerdiv=document.getElementById("container");
+containerdiv.appendChild(input);
+}
+
+//input become the child element for container div.
+</script>
+==========================================================================================
+Remove the existing element
+
+<body>
+<div id="container">//we need 1 parent element to add html elements
+<input type="text" placeholder="enter phno" id="phoneid">
+</div>
+<input type="button" value="-" onclick="removeField()">
+<script>
+function.removeField(){
+//approach1 -->directlr remove element
+const phoneField=document.getElementById("phoneid");
+phoneField.remove();
+}
+
+<!--second approach-->
+get object of container and input elements and remove input from container as a child element
+function.removeField(){
+const phoneField=document.getElementById("phoneid");
+const containerdiv=document.getElementById("container");
+containerdiv.remove(phoneid);
+
+}
+===========================================================================================================
+**turn off/on bulb   src of the image we need to update
+=============================================================================
+** accept name and display greet 
+<body>
+<input type="text" placeholder="enter a value" id="name">
+<input type="button" value="get name" onclick="getInput()">
+<script>
+function getInput(){
+const name=document.getElementById("name");//get object
+//read value of textbox
+const name=nameField.value;//to get the value enter by user
+alert("hello"+name);
+}
+//alert("hello"+document.getElementById("name"));
+
+=============================================================
+//inside h3 display result dynamically
+<body>
+<input type="text" placeholder="enter 1st value"  id=n1">
+<input type="text" placeholder="enter 2nd value"  id=n2">
+<input type="button" value="sum" onclick="sum()">
+<h3 id="result"></h3>
+<script>
+function sum()
+{
+const a=parseInt(document.getElementById("n1").value);
+const b=parseInt(document.getElementById("n2").value);
+const c=a+b;
+document.getElementById("result").innerHtml="sum is ";+c;
+}
+
+</body>
+
+====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document object
+ ==> write(), writeln()
+==> getElementById()
+		used to get object/instance of html element based on "id" atttribute
+	Syn:-	refvar = document.getElementById("id-attr")
+	
+==> getElementsByName()
+		used to get object/instance of html elements based on "name" atttribute
+	Syn:-	refvar = document.getElementsByName("name-attr")
+
+==> getElementsByTagName()
+		used to get object/instance of html elements based on "tag name" 
+	Syn:-	refvar = document.getElementsByTagName("tag-name")
+
+==> getElementsByClassName()
+		used to get object/instance of html elements based on "class"  attribute
+	Syn:-	refvar = document.getElementsByClassName("class-att")
+
+==> querySelector()
+		used to get object/instance of html element based on "css selector" 
+	Syn:-	refvar = document.querySelector("selector")		
+
+==> querySelectorAll()
+		used to get object/instance of html elements based on "css selector" 
+	Syn:-	refvar = document.querySelectorAll("selector")		
+-->
+<!-- example on dom -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+ </head>
+ <body>
+	<h3>demo on  document properties</h3>
+	<script>
+		document.write(`${document.title}<br>`);
+		document.title='title changed';
+
+		document.write(`${document.URL}<br>`);
+
+		const h = document.head;		//it returns head tag object
+		document.write(`${h}<br>`);
+
+		document.write(`${document.body}<br>`); //it returns body tag object
+
+		const img = document.images;		//it returns img tag objects
+		document.write(`${img}<br>`);
+
+		const link = document.links;		//it returns a tag objects
+		document.write(`${link}<br>`);
+
+		const form = document.forms;		//it returns form tag objects
+		document.write(`${form}<br>`);		 
+	</script>
+  </body>
+</html>
+				 
+
+

@@ -1,0 +1,170 @@
+
+
+
+
+//read the content of the file
+
+const fs=require('fs');
+fs.readFile('myfile.txt',(error,data)=>{
+if(error){
+console.log(error);
+else{
+console.log(data);
+console.log(data.toString());
+}
+});
+
+
+node node1.js
+we get buffered data.byte stream representation of string data.
+//data is bydefault the stream object,it will carry your file data in the form of bytes.
+//convert byte stream data into strings.
+
+//console.log(data.toString());
+
+
+//write content into file
+const fs=require('fs');
+fs.writeFile('myfile.txt','node js file write demo',(error)=>{ //if success it will execute successfull otherwise error msg will be display. override the original content.
+if(error)
+console.log(error);
+else
+console.log("data saved into file");
+});
+
+//append the data==>persist the older data along with new data.
+const fs=require('fs');
+fs.appendFile('myfile.txt','node js file append demo',(error)=>{ //if success it will execute successfull otherwise error msg will be display. override the original content.
+if(error)
+console.log(error);
+else
+console.log("data saved into file");
+});
+
+====================================================================
+readFile ,writeFile,appendFile are asynchronous.
+
+console.log("write operation started");
+const fs=require('fs');
+fs.appendFile('myfile1.txt','new data',(error)=>{ //if success it will execute successfull otherwise error msg will be display. override the original content.
+if(error)
+console.log(error);
+else
+console.log("data saved into file");
+});
+console.log("append operation ended");
+===============================================================================
+readFilesync(),writeFileSync(),
+
+===============================================
+//write() create and write the content into the file if file is not present
+const fs=require('fs');
+fs.writeFile('demo.txt','node js file ',(error)=>{ 
+if(error)
+console.log(error);
+else
+console.log("data saved into file");
+});
+===================================================
+open() will only create the file.
+const fs=require('fs');
+fs.open('data.txt','w ',(error,file)=>{ //file-->newly creatd file
+if(error)
+console.log(error);
+else
+console.log(" file created");
+console.log(file);//3 file value will be a non negative integer.
+/* this integer is file descriptor and use to handle/access a file*/ 
+});
+============================================
+delete a file
+const fs=require('fs');
+fs.unlink('demo.txt',(error)=>{ 
+if(error)
+console.log(error);
+else
+console.log("file deleted");
+});
+=============================================
+rename a file
+const fs=require('fs');
+fs.rename('demo.txt','demo1.txt ',(error)=>{ 
+if(error)
+console.log(error);
+else
+console.log(" file rename");
+});
+======================================================================
+above functions are asynchronus.all function takes 1 callback function
+=========================================================================
+sync read operation
+
+const fs=require('fs');
+console.log("before reading file");
+const data=fs.readFileSync('newdemo.txt');//it will return the value 
+console.log(data);
+console.log(data.toString());
+console.log("after reading file");
+===============================================================
+built in module,user-define module,third party modules:neither given by nodejs offically nor created by project developer.these modules are provided by 3rd party organization.we need to install them manually.
+==>to install /uninstall 3rd party module then there is a component of nodejs i.e npm
+==> node demo.js is  CLI: Command line interface application
+npm is a CLI and we need to write command to install/uninstall any module.
+=============================================================
+we will get npm with node js
+install: npm install module-name // install 3rd party module
+uninstall:npm uninstall module-name
+
+npm install express
+npm install mysql
+
+run**
+npm install express
+//whenever a module will be install into a project,we will get 3 things into our folder 
+node_modules folder
+package.json file
+package-lock.json file
+
+node_modules folder -->all the folder/files related to the install module will be stored here.
+package.json file-->it is always recommended to have this file.metadata of our project is stored into this file.
+name,version of project ,author,description.contain only json object in .json file.
+
+ways to create package.json file
+1)manually create a file:we need to create entire structure for json manually.
+2)generate this file with the help of npm.
+npm init // to generate package.json and it will ask for inputs
+
+package-lock.json file-->
+=============================================================
+Types of 3rd party modules
+1)local module: a module that has been install specifically in a project ex express and we can use local module only in the project where we have install it.
+==>only local module related files will be stored in node_modules folder.only local modules entry will be there in package.json files 
+2)global module:a module that has not been installed in a project so instead it will be installed at the global location.(installation location for node js) now any project can access it.
+npm install -g modulename
+======================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

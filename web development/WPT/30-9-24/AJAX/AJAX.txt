@@ -1,0 +1,79 @@
+(AJAX)asynchronous javascript and xml
+
+==>In web application,data will be stored on server side permanently whenever client needs data,client send request to the server and server will send response to the client.This entire process is done on client side by ajax. 
+
+ ==>we have to write js code to send req or take res from server,the same task done by ajax.
+==>ajax is something that is used to fetch data from server,by sending a request from the browser to it.the entire process will be asynchronous(non blocking),it will not block the other process in the browser.
+
+==>whenever a request is send  to the server, the browser  will reload the page.
+But while using fb-->like, dislike,searching name,browser will not reload again and again
+==>amazon searchbar-==>while searching for any product in the searchbar, data will be stored in amazon server, based on the product search in search bar,amazon server will display all the productlist based on the keyword ,without reloading of the webpage.
+
+==>without reloading of the browser,if we want to fetch data from the server,in that case ajax is used.
+
+==>using AJax we can fetch data from a server(send a request on a  server) asynchronously without reloading the browser window.
+==>AJAX is async in nature,this means it will not block the other process to get response from a server.
+=========================================================================================================
+For sending request we shld have URL, request method
+==>we need to specify on which url,we need to send the request and what will be request method.
+
+syntax:
+//whatever the operations(on which url,we need to send the request,request method)we need to perform it will be through object of XMLHtppRequest class.
+1. create object of XMLHtppRequest class //Object creation on client side.
+const xhr=new XMLHtppRequest();
+
+2.on which url we have to send request and what will be the request method for this we have to open or initialize the request:
+mention the url and request method
+xhr.open(method,url);
+xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+
+
+3.send the request
+xhr.send();
+
+//we are not having our own server
+jsonplaceholder---->dummy server
+https://jsonplaceholder.typicode.com/users
+==>whenever we will send GET request on this url, we get  response  data of all users
+
+=============================================================================================
+==>as soon we click on button ,request is sent from browser to  /user url, still page doesnot take reload.
+==>after processing the request,response is send by server to browser.
+==>response is ready with the browser which has been sent by the server.
+==>But still we havent process any response.
+==>status 200 means server has responded with data.
+
+==>Now we have to process the data
+we have to show the progress bar(loading sign) till we get response from the server.
+As soon as server respond with the data,show the progress bar as completed.
+======================================================================
+4. Get the response:
+we want to know the current state of the request(what is currently happening with the request i.e if request is accepted or not,if server has started processing or not,if server has responded or not,if response is ready on client or not)
+To do this,browser maintain a property for xhr object i.e readystate.
+
+==>we can get the state of the request using readyState property.
+0 : request object has been created but not yet initialized,not yet opened
+1: request has been initailized,open() has been called
+2:request has been sent
+3:request has been accepted by the server and it has started processing it
+4:response is ready
+
+when response is ready,event onreadystatechange event will be triggered
+
+faq: How to read response data
+==>by using responseText property
+=============================================================
+
+program 2://10users==10 paragraph
+
+program 3
+HOW TO DISPLAY DATA ON WEBPAGE?
+==>create dynamic table and populate data on table
+
+<thead> contains hardcode 
+<tbody>contains dynamic data
+create table row and for each row create column
+
+
+
+

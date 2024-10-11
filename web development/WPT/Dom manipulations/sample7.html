@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <div id="container"><!--we need 1 parent element to add html elements
+    -->
+        <input type="text" placeholder="enter phno" id="phoneid">
+    </div>
+    <input type="button" value="-" onclick="removeField()">
+    <script>
+        /*second approach
+get object of container and input elements and remove input from container as a child element*/
+function removeField(){
+const phoneField=document.getElementById("phoneid");
+const containerdiv=document.getElementById("container");
+containerdiv.remove(phoneid);
+}
+
+    </script>
+    </body>
+    
+
+    </html>

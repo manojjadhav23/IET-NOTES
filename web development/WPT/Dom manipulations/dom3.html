@@ -1,0 +1,37 @@
+<!-- example on DOM -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>Dom</title>
+ </head>
+ <body>
+	<h3>demo on  document methods</h3>
+	<label>Red</label> <br>
+	<label>Green</label> <br>
+	<label>Blue</label> <br>
+	
+	<h2 class="c">Apple</h2>
+	<p class="c">Mango</p>
+ 	<span class="c">Orange</span>
+	<hr>
+	<script>
+		const lob = document.getElementsByTagName("label");
+						/*	  background operations:
+							with name of h1 ==> 3h1
+						  obj1 = new HTMLLabelElement()
+						  obj2 = new HTMLLabelElement()
+						  obj3 = new HTMLLabelElement()
+						  3objs are init with all details of label's (att & data)
+						  coll = new HTMLCollection();
+						  adding 3objs to coll object
+							return coll 	*/
+		document.write(`${lob}<br>`);
+
+		const cob = document.getElementsByClassName("c");
+						//  --do-- 
+		document.write(`${cob}<br>`);
+	</script>
+  </body>
+</html>
+				 

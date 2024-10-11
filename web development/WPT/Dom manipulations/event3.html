@@ -1,0 +1,43 @@
+<!-- example on DOM -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>JS</title>
+	<style>
+		img{
+			width:260px;
+			height:260px;
+			border:2px solid;
+			margin-right:40px;
+		}
+	</style>
+ </head>
+ <body>
+	<h3>demo on dom Event handling</h3>
+	<div align="center">
+		<img id="img1" src="PHOTOS/BALL.jpg">
+		<img id="img2" src="PHOTOS/BALL1.jpg">
+		<img id="img3" src="PHOTOS/BALL2.jpg">
+	</div>
+	<script>
+		const im1 = document.images[0];	//images is predefine 
+		const im2 = document.images[1];
+		const im3 = document.images[2];
+
+		//changing images while mouse over & mouse out
+		im1.onmouseover=()=>{ im1.src="PHOTOS/BALL1.jpg" };
+		im1.onmouseout=()=>{ im1.src="PHOTOS/BALL2.jpg" };
+
+		im2.onmouseover=()=>{ im2.src="PHOTOS/BALL2.jpg" };
+		im2.onmouseout=()=>{ im2.src="PHOTOS/BALL3.jpg" };
+
+		im3.onmouseover=()=>{ im3.src="PHOTOS/BALL3.jpg" };
+		im3.onmouseout=()=>{ im3.src="PHOTOS/BALL1.jpg" };
+		im2.onmousedown=()=>{
+	
+		}
+	</script>
+  </body>
+</html>  
+

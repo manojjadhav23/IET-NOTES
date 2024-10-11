@@ -1,0 +1,40 @@
+<!-- examples on DOM -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>Dom</title>
+ </head>
+ <body>
+	<h3>demo on  document methods</h3>
+	<h1 id="heading">Hello World</h1>
+
+	<input type="radio" id="r1" name="color"/> <label>Red</label> &nbsp;
+	<input type="radio" id="r2" name="color"/> <label>Green</label> &nbsp;
+	<input type="radio" id="r3" name="color"/> <label>Blue</label> 
+	<hr>
+
+	<script>
+		let hob = document.getElementById("heading");
+						/*	 background operations:
+							H1 ==> HTMLHeadingElement
+							obj = new HTMLHeadingElement()
+							init obj with all details of h1 tag (att & data)
+							return obj	*/
+		document.write(`${hob}<br>`);
+
+		const rob = document.getElementsByName("color");
+						/*  background operations:
+							with name of cb ==> 3cb ===>  3input
+						  obj1 = new HTMLInputElement("radio")
+						  obj2 = new HTMLInputElement("radio")
+						  obj3 = new HTMLInputElement("radio")
+						  3objs are init with all details of radio's (attri & data)
+						  coll = new HTMLCollection();
+						  adding 3objs to coll object
+							return coll 	*/
+		document.write(`${rob}<br>`);
+	</script>
+  </body>
+</html>
+				 

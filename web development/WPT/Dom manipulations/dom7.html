@@ -1,0 +1,25 @@
+<!-- example on DOM -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+ </head>
+ <body>
+	<h3>demo on element properties (data manipulation)</h3>
+	<h1>Hi </h1>
+	<button onclick="change()">Update</button>
+	<button onclick="document.querySelector(`h1`).innerText=``">Delete</button>
+	<hr>
+	<script>
+		//changing h1 data
+		function change()
+		{
+			const h = document.querySelector("h1");
+			let name=prompt("enter name");
+			h.innerText=`Hi ${name}`;
+		}
+	</script>
+  </body>
+</html>
+

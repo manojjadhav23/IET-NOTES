@@ -1,0 +1,576 @@
+Event Handling by using jQuery:
+-------------------------------
+Event Handling by using jQuery:
+ We can implement event handling to make our html elements interactive.
+Examples:
+
+    moving a mouse over an element
+    selecting a radio button
+    clicking on an element
+
+ jQuery defines several methods for event handling. We can get complete jquery event
+handling related methods from below link: https://api.jquery.com/category/events
+
+3 top most commonly used methods in jQuery Event handling:
+-------------------------------------------------------
+1. click()  dblclick()
+2. keypress()
+3)on()
+
+1. click():
+----------
+==>In jQuery, most DOM events have an equivalent jQuery method.
+==>To assign a click event to all paragraphs on a page, you can do this:
+$("p").click();
+We can use click() method to add click listener to the element.
+
+eg-1: To raise alert message when ever we click h1 tag?
+$('h1').click(function(){
+alert('h1 tag got clicked')
+})
+
+eg-2: To raise alert message and to change background color of button
+on click event
+$('button').click(function(){
+alert('Hello dont sleep');
+$(this).css('background','red');
+})
+
+
+
+2. keypress():
+--------------
+ We can use this method to add keypress listener to elements.
+ i.e whenever we are pressing the key if we want to do any activity automatically then
+we should go for keypress() method.
+ Eg: To raise alert message for every character typed in text box
+Enter Name: <input type='text'>
+
+$('input').keypress(function(event){
+console.log(event)
+})
+
+$('input').keypress(function(event){
+if(event.which == 88 || event.which == 120){
+alert('Hello you are pressing x or X, You are under monitoring!!!')
+}
+})
+
+=======================================================================
+3.mouseenter()
+
+The mouseenter() method attaches an event handler function to an HTML element.
+
+The function is executed when the mouse pointer enters the HTML element:
+======================================================================================
+
+jQuery Effects:
+----------------
+jQuery provides several inbuilt effects. The main important effects
+are:
+1. Fading effects
+2. Sliding effects
+1. Fading effects:
+------------------
+I) Fading Effects:
+jQuery defines the following methods for fading purposes
+1) fadeOut():
+Hide the matched elements by fading them to transparent.
+2) fadeIn():
+Display the matched elements which are fadeout
+3) fadeToggle():
+Display or hide the matched elements
+If already fadeOut then fadeIn will be performed.
+If already fadeIn then fadeOut will be performed
+Fadeout--->FadeIn
+FadeIn--->FadeOut
+
+
+$('button').on('click',function(){
+$('div').fadeOut(2000);
+})
+
+$('button').on('click',function(){
+$('div').fadeToggle(3000);
+})
+
+==============================================================================
+jQuery Animations - The animate() Method
+
+The jQuery animate() method is used to create custom animations.
+
+Syntax:
+$(selector).animate({params},speed,callback);
+
+The required params parameter defines the CSS properties to be animated.
+The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+The optional callback parameter is a function to be executed after the animation completes.
+
+$(document).ready()
+The $(document).ready() method allows us to execute a function when the document is fully loaded. This event is already explained in the jQuery Syntax chapter. 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({right: '250px'});
+  });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+</html>
+
+
+=================================================================
+Notice that multiple properties can be animated at the same time:
+Example
+$("button").click(function(){
+  $("div").animate({
+    left: '250px',
+    opacity: '0.5',
+    height: '150px',
+    width: '150px'
+  });
+});  
+================================================================
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("div");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '300px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+  });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+</html>
+==========================================================
+You can even specify a property's animation value as "show", "hide", or "toggle":
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      height: 'toggle'
+    });
+  });
+});
+</script> 
+</head>
+<body>
+
+<p>Click the button multiple times to toggle the animation.</p>
+
+<button>Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+</html>
+
+=====================================================================================
+==================================================================
+
+Sample code to change color of every h1 tag:
+
+var h1tags = document.querySelectorAll('h1')
+for(h1 in h1tags){
+h1.style.color='red'
+}
+
+jQuery:
+-------
+$('h1').css('color','red')
+
+//offical code:jquery.com
+
+jQuery: 
+javascript predefined library is nothing but jquery .makes consise code
+
+jQuery is a fast, small, and feature-rich JavaScript library. It makes
+things like HTML document traversal and manipulation, event
+handling, animation, and Ajax much simpler with an easy-to-use API
+that works across a multitude of browsers. With a combination of
+versatility and extensibility, jQuery has changed the way that millions
+of people write JavaScript.
+
+The main advantage of jquery is, it provides several methods and
+objects in the form of javascript file, so that developer can use
+directly and his life will be simplified.
+
+plain old javascript code: Vanilla javascript.
+
+
+
+connect jquery to html by 2 ways
+1. locally or 2. By CDN(content delivery n/w)
+By using CDN:
+www.code.jquery.com
+ <script
+ src="http://code.jquery.com/jquery-3.3.1.js"
+ integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+ crossorigin="anonymous"></script>
+
+We can get several jquery CDNs from the google
+Eg: <script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+How to Check whether jQuery available or not in our Application:
+From the console just type
+> jQuery or $
+We should not get any error
+
+============================================================================
+
+
+jQuery Selectors:
+-----------------
+Vanilla Java script:
+getElementById()
+getElementsByClassName()
+getElementsByTagName()
+querySelector()
+querySelectorAll()
+
+
+in jQuery we have only one way to select html element: $ symbol
+$ ===>querySelectorAll()
+$('h1') ===>document.querySelectorAll('h1')
+
+ 
+Manipulate HTML Elements:
+-------------------------
+element selector
+id selector
+class selector
+* selector
+Descendant selector
+Adjucent selector
+attribute selector
+nth-of-type selector
+
+Once we grab elements by using $ symbol, we can manipulate by
+using css() method.
+
+$(selector).css(property,value)
+$('h1').css('color','white')
+$('h1').css('background','red')
+$('h1').css('border','5px solid green')
+
+We can save selected html element by using variable.
+var x = $('h1')
+x.css('color','white')
+x.css('background','red')
+x.css('border','5px solid green')
+
+Instead of passing parameters one by one, we can create  object and
+pass that object directly.
+var x = $('h1')
+var myCSS={
+color: 'white',
+background: 'green',
+border: '5px solid red'
+}
+x.css(myCSS)
+========================================================
+$('h1').css({
+color: 'white',
+background: 'green',
+border: '5px solid red'
+})
+***Note: We can use $() to select html elements, and css() to  manipulate(styles) html elements.
+$('h1')--->querySelectorAll() //All the html elements are going to be selected
+
+How to select a particular HTML element instead of all matched
+elements:
+------------------------------------------------------------------------
+$('element')---->All matched html elements.
+$('element:first')--->only first matched
+$('element:last')--->only last matched
+$('element:first-of-type')--->only first matched
+$('element:nth-of-type(2)')--->only 2nd matched
+$('element:nth-of-type(even)')--->only evenly matched
+$('element:nth-of-type(odd)')--->only odd matched
+
+eg:
+$('h1').css('color','red')--->Select all h1 tags
+$('h1:first').css('color','red')--->selects only first h1
+$('h1').first().css('color','red')--->selects only first h1
+$('h1:first-of-type').css('color','red')--->selects only first h1
+$('h1:nth-of-type(1)').css('color','red')--->selects only first h1
+$('h1:nth-of-type(3)').css('color','red')--->selects only 3rd h1
+$('h1:last').css('color','red')--->selects only last h1
+$('h1').last().css('color','red')--->selects only last h1
+$('h1:nth-of-type(even)').css('color','red')--->selects only even h1
+$('h1:nth-of-type(odd)').css('color','red')--->selects only odd h1
+
+
+=================================================================================================
+Q1. Write Vanilla java script and jQuery code to change all h1 tags text
+color as white and background as red?
+
+Vanilla java script:
+--------------------
+var allh1= document.querySelectorAll('h1')
+for(h1 of allh1){
+h1.style.color='white';
+h1.style.background='red';
+}
+jQuery code:
+-----------
+//create javascript object
+var mystyle={
+color:'white',
+background:'red'
+}
+$('h1').css(mystyle)
+
+Instead of this
+$('h1').css({
+color:'white',
+background:'red'
+})
+===========================================================================================
+Q2. Write vanilla javascript and jquery code to set all li tags font size
+as 50px?
+Vanilla java script:
+--------------------
+var allli= document.querySelectorAll('li')
+for(li of allli){
+li.style.fontSize='50px';
+}
+
+jQuery:
+-------
+$('li').css('fontSize','50px')
+
+================================================================================
+
+------------------
+demo.html:
+----------
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script></head>
+<body>
+<p> This is the first paragraph</p>
+<p id='second'> This is the second paragraph</p>
+<p class="remaining"> This is the third paragraph</p>
+<p class="remaining"> This is the fourth paragraph</p>
+</body>
+</html>
+
+Q1. Select all p tags and set background as green?
+$('p').css('background','green')
+
+Q2. Select all p tags with class 'remaining' and make them 200px
+width
+
+$('p').css('background','green')
+$('.remaining').css('width','200px')
+
+Q3. Select all <p> tags with id='second' and give red solid 10px
+border?
+
+$('#second').css('border','10px solid red')
+Q4. Select only third <p> tag and change font size as 30px?
+
+$('p:nth-of-type(3)').css('fontSize','30px')
+=========================================================================================
+how to manipulate text?
+The Most commonly used jQuery Methods:
+--------------------------------------
+1. text()--->textContent
+2. html()
+3. attr()
+4. val()
+5. addClass()
+6. removeClass()
+7. toggleClass()
+
+1. text():
+----------
+We can use this method to get or set text content of matched elements.
+It acts as both getter and setter method.
+
+text()---->getter method to get content
+text(content)--->setter method to set content.
+
+eg-1: To get content of h1 tag
+$('h1').text()
+"This is h1 tag"
+
+eg-2: To get text of all li tags
+$('li').text()
+$('li:first').text()
+
+To set h1 content as 'WPT'
+$('h1').text('WPT')
+
+jquery.com
+API DOC
+
+2. html()
+---------
+Get the HTML contents of the first element in the set of matched
+elements or set the HTML contents of every matched element.
+
+$('h1').html()
+$('li').html()
+$('ul').html()   or    $('ul').text()  
+$('li').html('<a href="https://amazon.com">Amazon</a>')
+<a href='https://amazon.com'>Amazon</a>
+
+
+
+
+3. attr():
+----------
+attr --->attribute
+Get the value of an attribute for the first element in the set of
+matched elements or
+set one or more attributes for every matched element.
+attr(attributename) --->To get the value of the specified attribute of the first matched element.
+attr(attributename,attributevalue)--->If the specified attribute already available then old value will be repalced with new value in
+every matched element.
+If the specified attribute is not already available then this new attribute will be set.
+
+
+element.text()--->returns text content of specified html
+element(getter method)
+element.text('newcontent')--->sets newcontent (setter method)
+-------------------------------------
+element.html()--->get inner html of specified element(getter method)
+element.html('html code')--->set inner html of specified
+element(setter)
+---------------------------------------------------------------------
+element.attr(attributename)--->Returns the value associated with
+sepcified attribute in the given html element.(getter method)
+element.attr(attributename,attributevalue)--->setter method
+
+
+<img src='tata1.jpg'>
+$('img').attr('src')--->durga.jpg 		//what is the value associated with src attribute
+$('img').attr('src','sunny.jpg')
+$('img').attr('height',50px)
+$('img').css({height:'150px',width:'150px'})
+
+======================================================================
+program:
+
+1) To Set Width and Height of every Image Properly
+$('img').css({width:'150px',height:'150px'});
+
+2) To get src Attribute Value of the First Image
+$('img').attr('src')
+
+3)To set src attribute of all images with our new image.
+$('img').attr('src','https://images.unsplash.com/photo-1583499871880-de841d1ace2a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGFuaW1hbHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+3. To change only first image scr attribute value:
+------------------------------------------------
+$('img').first().attr('src','https://images.unsplash.com/photo-1583499871880-de841d1ace2a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGFuaW1hbHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+====================================================================================================
+
+
+Demo for getting and setting type attribute of input tag:
+---------------------------------------------------------
+User Input: <input type='text' name='' value=''>
+tag name: input
+attribute name: type
+eg-1: To get value of type attribute of input tag
+$('input').attr('type')
+eg-2: To set the value of type attribute with color:
+-----------------------------------------------------
+$('input').attr('type','color')
+eg-3: To set the value of type attribute with 'checkbox':
+---------------------------------------------------------
+
+$('input').attr('type','checkbox')
+
+
+
+
+4. val():
+---------
+Get the current value of the first element in the set of matched
+elements or set the value of every matched element.
+eg:
+value entered in the text box
+which radio button selected
+which value selected from the dropdown box
+
+Enter Name: <input type='text' name='user1' value="abc" >
+Enter Name: <input type='text' name='user1' value="xyz">
+
+1. To get value provided by enduser for the first input tag?
+$('input').val()
+
+2. To get value provided by enduser for the second input tag?
+$('input:nth-of-type(2)').val()
+
+3. To set for all input tags as sunny as the value
+$('input').val('sunny')
+$('input:nth-of-type(2)').val('sunny')
+
+$('input').val('')
+
+==================================================================================================
+addClass()--->To add specified class to the set of matched elements
+removeClass()--->To remove specified class from the set of matched
+elements
+toggleClass()--->add/remove
+css class
+eg-1: Add high class for every li tag
+$('li').addClass('high')
+
+eg-2: For every even li, remove high class
+$('li:nth-of-type(even)').removeClass('high')
+eg-3: For 2nd li add class completed
+$('li:nth-of-type(2)').addClass('completed')
+$('li:nth-of-type(2)').addClass('low')
+
+eg-4: toggle class high for every li tag:
+-----------------------------------------
+$('li').toggleClass('high')
+=====================================================================================================================
+
+
+

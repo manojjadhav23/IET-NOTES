@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .error-text
+    {
+    color:red;
+    }
+</style>
+    </head>
+    <body>
+    <form action="https://www.google.com" onsubmit="return true">
+    <input type="text" placeholder="enter name" id="name">
+    <span id="name-error" class="error-text">name is required</span>
+    <br><br>
+    <input type="password" placeholder="enter password" id="password">
+    <span id="password-error" class="error-text">password is required</span>
+    <br><br>
+    <input type="submit" value="login">
+    </form>
+</body>
+</html>  
+
+
+//as soon as user click on submit button onsubmit event occurs and it will return boolean value.if
+it is returning true then action will be executed.if it is false,action will not be executed.
+//we will defined some function in javascript,now the function will return either true or false based on the value given by the user.
+
+======================================================================================
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .error-text
+    {
+    color:red;
+    }
+</style>
+    </head>
+    <body>
+    <form action="https://www.google.com" onsubmit="return validate()">
+    <input type="text" placeholder="enter name" id="name">
+    <span id="error" class="error-text"></span>
+    <br><br>
+    <input type="password" placeholder="enter password" id="password">
+    <span id="error1" class="error-text"></span>
+    <br><br>
+    <input type="submit" value="login">
+    </form>
+    <script>
+        function validate(){
+           const name= document.getElementById("name").value;
+            if(name.length == 0){
+                    document.getElementById("error").innerHTML="name is required";
+                    return false;                  
+    }
+      return true;
+    }        
+    </script>
+    </body>
+    </html>
+    
+================================================================================
+As soon as the user enter username,error message should get vanished.
+1)length shld be greater than 0
+2)whenever user starts typing,we shld vanish that msg.
+onkeyevent will be triggered as soon as key is press.
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .error-text
+    {
+    color:red;
+    }
+</style>
+    </head>
+    <body>
+    <form action="https://www.google.com" onsubmit="return validate()">
+    <input type="text" placeholder="enter name" id="name" onKeyUp="validateName()">
+    <span id="error" class="error-text"></span>
+    <br><br>
+    <input type="password" placeholder="enter password" id="password">
+    <span id="error1" class="error-text"></span>
+    <br><br>
+    <input type="submit" value="login">
+    </form>
+    <script>
+        function validate(){
+           const name= document.getElementById("name").value;
+            if(name.length == 0){
+                    document.getElementById("error").innerHTML="name is required";
+                    return false;  
+                    }
+                    return true;                
+            }
+     
+      function validateName()
+      {
+        const name= document.getElementById("name").value;
+            if(name.length == 0)
+                    document.getElementById("error").innerHTML="name is required";
+            else
+                document.getElementById("error").innerHTML="";
+          
+            
+
+      }
+            
+            
+    </script>
+    </body>
+    </html>
+    
+============================================================================================================
+#control will be returned
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .error-text
+    {
+    color:red;
+    }
+</style>
+    </head>
+    <body>
+    <form action="https://www.google.com" onsubmit="return validate()">
+    <input type="text" placeholder="enter name" id="name" onKeyUp="validateName()">
+    <span id="error" class="error-text"></span>
+    <br><br>
+    <input type="password" placeholder="enter password" id="password">
+    <span id="error1" class="error-text"></span>
+    <br><br>
+    <input type="submit" value="login">
+    </form>
+    <script>
+        function validate(){
+           const name= document.getElementById("name").value;
+           const password=document.getElementById("password").value;
+
+            if(name.length == 0){
+                    document.getElementById("error").innerHTML="name is required";
+                    return false;  
+                    }
+                    if(password.length == 0){
+                    document.getElementById("password").innerHTML="password is required";
+                    return false;  
+                    }
+                    return true;
+                                 
+            }               
+            
+            
+     
+      function validateName()
+      {
+        const name= document.getElementById("name").value;
+            if(name.length == 0)
+                    document.getElementById("error").innerHTML="name is required";
+            else
+                document.getElementById("error").innerHTML="";
+          
+            
+
+      }
+            
+            
+    </script>
+    </body>
+    </html>
+    
+============================================================================
+
+    ###flag
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .error-text
+    {
+    color:red;
+    }
+</style>
+    </head>
+    <body>
+    <form action="https://www.google.com" onsubmit="return validate()">
+    <input type="text" placeholder="enter name" id="name" onKeyUp="validateName()">
+    <span id="error" class="error-text"></span>
+    <br><br>
+    <input type="password" placeholder="enter password" id="password">
+    <span id="error1" class="error-text"></span>
+    <br><br>
+    <input type="submit" value="login">
+    </form>
+    <script>
+        function validate(){
+           const name= document.getElementById("name").value;
+           const password=document.getElementById("password").value;
+            var isValid=true;
+            if(name.length == 0){
+                    document.getElementById("error").innerHTML="name is required";
+                    isValid=false;  
+                    }
+                    if(password.length == 0){
+                    document.getElementById("error1").innerHTML="password is required";
+                    isValid= false;  
+                    }
+                    return isValid;
+                                 
+            }               
+            
+            
+     
+      function validateName()
+      {
+        const name= document.getElementById("name").value;
+            if(name.length == 0)
+                    document.getElementById("error").innerHTML="name is required";
+            else
+                document.getElementById("error").innerHTML="";
+          
+            
+
+      }           
+            
+    </script>
+    </body>
+    </html>
+    
+==================================================================================
+##create onkeyevent for password
+
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+    .error-text
+    {
+    color:red;
+    }
+</style>
+    </head>
+    <body>
+    <form action="https://www.google.com" onsubmit="return validate()">
+    <input type="text" placeholder="enter name" id="name" onKeyUp="validateName()">
+    <span id="error" class="error-text"></span>
+    <br><br>
+    <input type="password" placeholder="enter password" id="password" onKeyUp="validatePassword()">
+    <span id="error1" class="error-text"></span>
+    <br><br>
+    <input type="submit" value="login">
+    </form>
+    <script>
+        function validate(){
+           const name= document.getElementById("name").value;
+           const password=document.getElementById("password").value;
+            var isValid=true;
+            if(name.length == 0){
+                    document.getElementById("error").innerHTML="name is required";
+                    isValid=false;  
+                    }
+                    if(password.length == 0){
+                    document.getElementById("error1").innerHTML="password is required";
+                    isValid= false;  
+                    }
+                    return isValid;
+                                 
+            }               
+            
+            
+     
+      
+      function validateName()
+      {
+        const name= document.getElementById("name").value;
+            if(name.length == 0)
+                    document.getElementById("error").innerHTML="name is required";
+            else
+                document.getElementById("error").innerHTML="";
+          
+            
+
+      }
+      function validatePassword()
+      {
+        const password= document.getElementById("password").value;
+            if(password.length == 0)
+                    document.getElementById("error1").innerHTML="password is required";
+            else
+                document.getElementById("error1").innerHTML="";
+          
+            
+
+      }
+            
+            
+    </script>
+    </body>
+    </html>
+    ==========================================================================
+    
+
+
+
+
+

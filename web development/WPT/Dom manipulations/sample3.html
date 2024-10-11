@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+<body>
+    <h1 id="myh1">welcome<span>to world</span></h1>
+    <input type="button" value="get content" onclick="getContent()">
+    <script>
+    
+    function getContent(){
+        //get the object of h1 whose id=myh1.
+    var refvar = document.getElementById("myh1");//using refvar change the content,change the style,remove the content
+    console .log(refvar);
+    //to read the content written inside html element we are getting 1 property innerHtml 
+    console.log(refvar.innerText);
+    }
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,38 @@
+<!-- CSS Selectors 
+class sel
+=> used to define/to apply same styles for  group of instances of specific element
+=> also used to define/to apply same styles for group of elements
+	Syn:			 .class-name{
+						prop:val;
+						prop:val;
+						.......
+					}
+
+mapping
+=> every "class" selector should be mapped with corr elements using "class" attribute
+		<tag  class="class-name">
+		<tag class="class1  class2  class3...">
+-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+	<style>
+		.c1{ background:red; }
+		.c2{ background:green; }
+		.test{ 
+			background:blue;
+			color:yellow;
+		}
+	</style>
+ </head>
+ <body> 
+	<h2>demo on  class  selector</h2>
+	
+	<br>
+	<p class="test">Samsung</p>
+	<span class="test">LG</span> <br>
+	<a href="ex1.html" class="test">goto Ex1</a> <br>
+	<input type="text" class="test">
+ </body>
+</html>

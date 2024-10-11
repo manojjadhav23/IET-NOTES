@@ -1,0 +1,52 @@
+<!-- element o+bject properties
+innerText => this prop used to retrieve data from html element, 
+						we can assign data to html element
+						
+=> it supports paired tag only, but use only with string
+		Syn:-		ele-obj.innerText //read the content
+						ele-obj.innerText=value;//update the content
+
+innerHTML =>	 --do--
+=> it sup paired tag only,  string data and html content (like <h1>  #1234ab		&gt; ...)
+		Syn:-		ele-obj.innerHTML// read
+						ele-obj.innerHTML=value/html con;//update
+
+value	=>  --do--			
+			=> it sup un-paired tag only, but string data only
+		Syn:-		ele-obj.value
+						ele-obj.value=value;		
+ 
+tagName ==> it returns name of tag 
+			Syn:-	ele-obj.tagName
+-->	
+<!-- example on DOM -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>Dom</title>
+ </head>
+ <body>
+	<h3>demo on element properties (data manipulation)</h3>
+	<h1 id="head1">Hello</h1>
+	<input type="text" id="tb1" name="tb1" value="1000">
+	<hr>
+	<script>
+		//paired tag     
+		const h1 = document.getElementById("head1");
+		document.write(`${h1.innerText}<br>`);//read the content
+		//h1.innerText=`Hi`;	  //updation
+		//h1.innerText+=` Siva`;		//appending
+       // h1.innerText=``;		//deletion
+
+		//unpaired tag
+		const tb = document.getElementById("tb1");
+		document.write(`${tb.value}<br>`);
+		//tb.value=1234;		//updation
+		//tb.value+=`apples`;    //appending
+		//tb.value=``;		// deletion
+		//tb.value+=3;//i want ans as 1003
+
+	</script>
+  </body>
+</html>
