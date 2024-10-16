@@ -1,6 +1,6 @@
 package com.demo.beans;
 
-public class Account {
+public abstract class Account {
 	static int cnt;
 	static {cnt=1;}
 	private String acid;
@@ -9,12 +9,22 @@ public class Account {
 	private String question;
 	private String ans;
 	protected double balance;
-	public Account() {
+	public Account(String type) {
 		super();
+		this.acid=GenerateID(type,null);
+	}
+	private String GenerateID(String type, String aname) {
+		String id=null;
+		if(aname!=null) {
+			id=type+aname.substring(0,2)+cnt;
+		}else {
+			id=type+"xx"+cnt;
+		}
+		cnt++;
+		return id;
 	}
 	public Account(String acid, String aname, int pin, String question, String ans, double balance) {
 		super();
-		this.acid = acid;
 		this.aname = aname;
 		this.pin = pin;
 		this.question = question;
@@ -62,6 +72,12 @@ public class Account {
 	}
 	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+	abstract public int withdraw(double amt);
+	
+	public double deposit(double amt) {
+		balance=balance+amt;
+		return 1;
 	}
 	@Override
 	public String toString() {

@@ -1,0 +1,14 @@
+package com.demo.dao;
+
+import com.demo.beans.Account;
+
+public class AccountDaoImpl implements AccountDao {
+
+	@Override
+	public Object OpenNewAccount(Account ac) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

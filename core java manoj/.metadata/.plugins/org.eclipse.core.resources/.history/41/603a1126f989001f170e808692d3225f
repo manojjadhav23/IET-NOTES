@@ -1,0 +1,17 @@
+package com.demo.service;
+
+import com.demo.dao.AccountDao;
+import com.demo.dao.AccountDaoImpl;
+
+public class AccountServiceImpl implements AccountService {
+	private AccountDao dao;
+	AccountServiceImpl(){
+		dao=new AccountDaoImpl();
+	}
+	@Override
+	public void OpenNewAccount() {
+		
+		
+	}
+
+}

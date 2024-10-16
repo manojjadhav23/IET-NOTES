@@ -1,0 +1,11 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+public class CourseTest {
+	Scanner sc=new Scanner(System.in);
+	int choice =0;
+	do {
+		
+	}while(choice!=9);
+}

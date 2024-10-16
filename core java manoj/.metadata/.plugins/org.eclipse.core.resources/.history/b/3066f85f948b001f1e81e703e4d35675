@@ -1,0 +1,15 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test02 {
+
+	public static void main(String[] args) {
+      
+		FileInputStream fis = new FileInputStream("text.txt");
+		FileOutputStream fos = new FileOutputStream("textcopy.txt");
+		
+	
+	}
+	
+
+}

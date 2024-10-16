@@ -1,0 +1,35 @@
+package com.demo.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.demo.beans.Course;
+
+public class CourseDaoImpl implements CourseDao {
+	static Map<String,Course> hm;
+	
+	static {
+		hm=new HashMap<>();
+		hm.put("DAC",new Course("DAC",10000,100,6));
+        hm.put("DBDA",new Course("DBDA",20000,200,8));
+        hm.put("DMC",new Course("DMC",30000,60,5));
+	}
+	@Override
+	public boolean AddNewCourse(Course cobj) {
+		Course c1=hm.putIfAbsent(cobj.getCname(), cobj);
+		if(c1==null) {
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public Map<String,Course> DisplayAll() {
+		return hm;
+		}
+	@Override
+	public boolean RemoveCourse(cname) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,17 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class textfileappendfile {
+	
+	FileInputStream fis=new FileInputStream("test1.txt");
+	FileOutputStream fos=null;
+	
+	int c=fis.read();
+	while(c!=-1) {
+		fos.write(c);
+		c=fis.read();
+	}
+	
+	
+
+}

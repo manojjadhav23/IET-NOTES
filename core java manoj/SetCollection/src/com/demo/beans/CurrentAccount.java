@@ -10,7 +10,7 @@ public class CurrentAccount extends Account {
 		min_balance=0f;
 	}
 	public CurrentAccount() {
-		super();
+		super("c");
 	}
 	
 	
@@ -56,11 +56,18 @@ public class CurrentAccount extends Account {
 		CurrentAccount.min_balance = min_balance;
 	}
 
-
+	public int withdraw(double amt) {
+		if(balance-amt>=min_balance) {
+			balance=balance-amt;
+			return 1;
+		}
+		return 2;
+		
+	}
 
 	@Override
 	public String toString() {
-		return super.toString()"CurrentAccount [min_transaction=" + min_transaction + ", int_rate=" + int_rate + ", min_balance="
+		return super.toString()+"CurrentAccount [min_transaction=" + min_transaction + ", int_rate=" + int_rate + ", min_balance="
 				+ min_balance + "]";
 	}
 	

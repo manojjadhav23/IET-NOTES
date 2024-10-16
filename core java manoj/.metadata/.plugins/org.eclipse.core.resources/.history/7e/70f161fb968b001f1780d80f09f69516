@@ -1,0 +1,7 @@
+
+public class textfileappendfile {
+	
+	FileInputFile fis=new FileInputStream("text.txt");
+	
+
+}

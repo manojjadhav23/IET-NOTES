@@ -1,0 +1,19 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.service.CourseService;
+import com.demo.service.CourseServiceImpl;
+
+public class CourseTest {
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	CourseService cs=new CourseServiceImpl();
+	int ch=0;
+	do {
+		
+		
+	}while(ch!=9);
+	}
+}
+

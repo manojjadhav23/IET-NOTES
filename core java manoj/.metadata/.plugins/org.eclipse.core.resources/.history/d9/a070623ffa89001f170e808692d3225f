@@ -1,0 +1,11 @@
+package com.demo.dao;
+
+public class AccountDaoImpl implements AccountDao {
+
+	@Override
+	public Object OpenNewAccount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

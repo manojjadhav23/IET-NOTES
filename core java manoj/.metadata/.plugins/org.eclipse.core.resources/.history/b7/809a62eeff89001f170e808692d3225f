@@ -1,0 +1,12 @@
+package com.demo.service;
+
+import java.util.Set;
+
+import com.demo.beans.Account;
+
+public interface AccountService  {
+	boolean OpenNewAccount(int ch);
+
+	Set<Account> DisplayAll();
+
+}

@@ -1,0 +1,11 @@
+package com.demo.dao;
+
+import com.demo.beans.Course;
+
+public interface CourseDao {
+
+	int AddNewCourse(Course cobj);
+
+	void DisplayAll();
+
+}

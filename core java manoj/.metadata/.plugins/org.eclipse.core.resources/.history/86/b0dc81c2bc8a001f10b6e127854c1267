@@ -1,0 +1,34 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.service.CourseService;
+import com.demo.service.CourseServiceImpl;
+
+public class CourseTest {
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	CourseService cs=new CourseServiceImpl();
+	int ch=0;
+	do {
+		System.out.println("1. add new course\n2. delete course\n3. update course\n4. display all");
+		System.out.println("5. display by name\n6. display based on duration\n7. display in sorted order of course name\n"
+				+ "8. display in sorted order of duration\n9.exit\nchoice:");
+		ch=sc.nextInt();
+		
+	 switch(ch)
+	 {
+	 case 1:int ans=cs.AddNewCourse();
+	 		if(ans==1)
+	 		{
+	 			System.out.println("course added sucessfully");
+	 		}
+	 		else {
+	 			System.out.println("duplicate object");
+	 		}
+		 break;
+	 }
+	}while(ch!=9);
+	}
+}
+

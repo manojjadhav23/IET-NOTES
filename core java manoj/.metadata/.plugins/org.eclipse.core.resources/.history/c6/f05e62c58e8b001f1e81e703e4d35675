@@ -1,0 +1,18 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.w3c.dom.Text;
+
+public class Test01 {
+
+	public static void main(String[] args) {
+		FileInputStream fis=null;
+		FileOutputStream fos=null;
+		try {
+			fis=new FileInputStream("text.txt");
+			fos=new FileOutStream("textcopy.txt");
+		}
+
+	}
+
+}

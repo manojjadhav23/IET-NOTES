@@ -1,0 +1,10 @@
+package com.demo.test;
+
+public class AccountServiceImpl {
+
+	public void OpenNewAccount() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

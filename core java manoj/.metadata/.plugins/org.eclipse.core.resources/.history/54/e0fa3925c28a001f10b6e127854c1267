@@ -1,0 +1,14 @@
+package com.demo.dao;
+
+import java.util.Map;
+
+import com.demo.beans.Course;
+
+public interface CourseDao {
+
+	boolean AddNewCourse(Course cobj);
+
+	Map<String, Course> DisplayAll();
+
+
+}

@@ -1,0 +1,8 @@
+package com.demo.beans;
+
+public class Course {
+	private String cname;
+	private double fee;
+	private int capacity;
+	private int duration;
+}
