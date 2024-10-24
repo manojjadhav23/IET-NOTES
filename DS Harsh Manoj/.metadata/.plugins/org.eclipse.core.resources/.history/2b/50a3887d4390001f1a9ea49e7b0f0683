@@ -1,0 +1,21 @@
+package com.demo.test;
+
+public class TestAddition {
+	public static void main(String[] args) {
+		int []arr = {30,2,4,40,6,8};
+		
+		int sum=Addition(arr);
+		System.out.println("(Normal Way)Addition is:"+sum);
+	}
+
+
+	private static int Addition(int[] arr) {
+		int sum=0;
+		for(int i=0;i<arr.length;i++) {
+			sum+=arr[i];
+		}
+		return sum;
+		
+	}
+
+}

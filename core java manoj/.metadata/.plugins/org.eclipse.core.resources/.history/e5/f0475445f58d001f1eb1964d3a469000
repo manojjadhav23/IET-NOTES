@@ -1,0 +1,19 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.thread.SearchThread;
+
+public class TestSearch {
+
+	public static void main(String[] args) {
+		String[] strarr= {"rohit","rajesh","nikhil"};
+		SearchThread[] st=new SearchThread[strarr.length];
+		Scanner sc=new Scanner(System.in);
+		
+		
+		
+		
+	}
+
+}

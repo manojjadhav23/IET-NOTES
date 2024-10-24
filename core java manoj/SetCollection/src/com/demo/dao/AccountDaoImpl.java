@@ -38,5 +38,11 @@ public class AccountDaoImpl implements AccountDao {
 		return null;
 	}
 
+	@Override
+	public Account finddname(String duname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

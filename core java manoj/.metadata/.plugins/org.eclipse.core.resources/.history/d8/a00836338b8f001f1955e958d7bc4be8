@@ -1,0 +1,33 @@
+package com.demo.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class ExecutorServiceTest {
+
+	public static void main(String[] args) {
+		ExecutorService es = Executors.newFixedThreadPool(4);
+		List<Future<Integer>> lst = new ArrayList<>();
+		
+		for(int i=0;i<10;i=i+10) {
+			Future<Integer> fs =es.submit(MyTask());
+			lst.add(fs);
+	}
+		int sum=0;
+		for(Future<Integer> fs1:lst) {
+			try {
+				sum=sum+fs1.get();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Sum is:"+sum);
+		es.shutdown();
+	}
+
+}

@@ -1,0 +1,37 @@
+package com.demo.Test;
+
+import java.util.Scanner;
+
+import com.demo.service.EmployeeService;
+import com.demo.service.EmployeeServiceImpl;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		EmployeeService es=new EmployeeServiceImpl();
+		es.ReadFile("Empcsv.csv");
+		int choice=0;
+		do {
+			System.out.println("1.Add New Employee \n2.Delete Employee \n3.Update Information "
+					+ "\n4.Display All \n5.Exit \nChoice:");
+			choice = sc.nextInt();
+			
+			switch(choice) {
+			case 1:es.AddNewEmployee();
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				System.out.println("Thank you for Visiting.......");
+				break;
+			}
+		}while(choice!=5);
+
+	}
+
+}

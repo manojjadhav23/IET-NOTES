@@ -1,0 +1,53 @@
+package com.demo.beans;
+
+public class ServiceArray {
+
+	public static int findMax(int[] arr) {
+		int max= arr[0];
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]>max)
+				max=arr[i];
+		}
+		return max;
+	}
+
+	public static int findMin(int[] arr) {
+		int min= arr[0];
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]<min)
+				min=arr[i];
+		}
+		return min;
+	}
+
+	public static int FindSecondMax(int[] arr) {
+		int max=arr[0];
+		int smax=0;
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]>max) {
+				smax=max;
+				max=arr[i];
+			}
+		}
+		return smax;
+	}
+
+	public static int AddPrime(int[] arr) {
+		int sum=0;
+		for(int i=0;i<arr.length;i++) {
+			sum=isPrime(arr);
+		}
+		return sum;
+	}
+
+	private static int isPrime(int[] arr) {
+		int sum=0;
+		for(int i=2;i<arr.length;i++) {
+			if(arr[i]%i!=0) {
+				sum=sum+arr[i];
+			}
+		}
+		return sum;
+	}
+
+}

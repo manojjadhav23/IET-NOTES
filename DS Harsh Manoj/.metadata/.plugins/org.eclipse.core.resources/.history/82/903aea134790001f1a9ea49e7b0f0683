@@ -1,0 +1,17 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+public class TestBinarySearch {
+	public static void main(String[] args) {
+		int []arr = {30,2,4,40,6,8};
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number to Search:");
+		int n=sc.nextInt();
+		int pos=BinarySearch(arr,0,arr.length-1,n);
+		if(pos!=-1)
+			System.out.println("Number Found at:"+pos);
+		else
+			System.out.println("Number not Found");
+	}
+}

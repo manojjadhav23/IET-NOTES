@@ -1,0 +1,12 @@
+package com.demo.Test;
+
+import java.io.FileInputStream;
+
+public class TestBufferedInputStream {
+     public static void main(String[] args) {
+    	 try (BufferedInputStream bio=new BufferedInputStream(new FileInputStream("textoriginal.txt"))){
+    		 
+    	 }
+     }
+
+}

@@ -1,0 +1,21 @@
+package com.demo.test;
+
+import com.demo.beans.MyClass;
+import com.demo.threads.FactorialThread;
+import com.demo.threads.TableThread;
+
+public class TestThread {
+
+	public static void main(String[] args) {
+		MyClass ob = new MyClass();
+		
+		TableThread th=new TableThread(ob, 7);
+		
+		FactorialThread th1 = new FactorialThread(ob,5);
+		
+		TableThread th2=new TableThread(ob, 10);
+
+	}
+
+
+}

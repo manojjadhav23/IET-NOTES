@@ -1,0 +1,17 @@
+package com.demo.test;
+
+import com.demo.beans.ServiceArray;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+		int []arr = {10,20,30,40,50,60};
+		
+		int max=ServiceArray.findMax(arr);
+		System.out.println("Maximum number is:"+max);
+		
+		int min=ServiceArray.findMin(arr);
+		System.out.println("Maximum number is:"+min);
+	}
+
+}

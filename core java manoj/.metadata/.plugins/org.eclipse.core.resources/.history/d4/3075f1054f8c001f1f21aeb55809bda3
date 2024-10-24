@@ -1,0 +1,11 @@
+package com.demo.dao;
+
+import com.demo.beans.Employee;
+
+public interface ServiceDao {
+
+	void ReadFile(String fname);
+
+	boolean AddNewEmployee(Employee e);
+
+}

@@ -439,7 +439,7 @@ begin
   return CONCAT(UPPER(LEFT(x,1)), SUBSTR(LOWER(x), 2 ));
 end $$
 delimiter ;
-*/
+
 
 
 
@@ -466,3 +466,71 @@ delimiter ;
 
 
 
+
+drop trigger if exists tr1;
+delimiter $
+create trigger tr1 before insert on dept for each ROW
+begin
+	select 'Hello World...  by saleel' into @x;
+end $
+delimiter ;
+
+
+
+DROP FUNCTION IF EXISTS f1;
+delimiter $$
+CREATE FUNCTION f1() returns int
+DETERMINISTIC
+begin
+  return (select max(deptno) + 1 from dept);
+end $$
+delimiter ;
+
+drop trigger if exists tr1;
+delimiter $
+create trigger tr1 after insert on dept for each ROW
+begin
+	select count(*) into @x from dept;
+end $
+delimiter ;
+*/
+/*MYSQL> insert into dept values(51,'HRD','baroda','sam3r3', '24/10/2024');
+
+new.deptno := 51, new.dname := 'HRD',....., new.startedon:= '24/10/2024'
+*/
+
+/*
+drop trigger if exists tr1;
+delimiter $
+create trigger tr1 before delete on dept for each ROW
+begin
+	insert into d1 values(old.deptno, old.dname, old.loc, old.pwd, old.startedon, now(), user());
+end $
+delimiter ;
+
+
+
+drop trigger if exists tr1;
+delimiter $
+create trigger tr1 before insert on dept for each ROW
+begin
+	set new.dname := upper(new.dname);
+end $
+delimiter ;
+
+*/
+/*MYSQL> insert into dept(deptno,dname) values(f1(),'abc');   ABC
+
+new.deptno := f1()
+new.dname := 'abc'    ABC
+*/
+
+drop trigger if exists tr1;
+delimiter $
+create trigger tr1 before insert on dept for each ROW
+begin
+	if dayname(curdate()) = 'Thursday' then
+		signal sqlstate '42000' set message_text = 'Invalid Day';
+	end if;
+end $
+delimiter ;

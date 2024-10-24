@@ -1,0 +1,14 @@
+package com.demo.test;
+
+import com.demo.beans.MyClass;
+
+public class SumThread implements Runnable {
+
+	@Override
+	public void run() {
+		private MyClass ob;
+		private int n;
+		
+	}
+
+}

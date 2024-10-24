@@ -1,0 +1,29 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.thread.SearchThread;
+
+public class TestSearch {
+
+	public static void main(String[] args) {
+		String[] strarr= {"rohit","rajesh","nikhil"};
+		SearchThread[] st=new SearchThread[strarr.length];
+		for(int i=0;i<st.length;i++) {
+			st[i].start();
+		}
+		
+		for(int i=0;i<st.length;i++) {
+			try {
+				st[i].join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+	}
+
+}

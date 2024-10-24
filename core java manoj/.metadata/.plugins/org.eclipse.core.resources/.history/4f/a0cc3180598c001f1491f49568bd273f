@@ -1,0 +1,7 @@
+package com.demo.Exception;
+
+public class EmployeeNotFound extends Exception {
+	EmployeeNotFound(String msg){
+		super(msg);
+	}
+}

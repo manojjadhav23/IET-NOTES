@@ -1,0 +1,17 @@
+package com.demo.beans;
+
+import java.util.Scanner;
+
+public class MyClass {
+
+	public void PrintTables() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a Number:");
+		int n = sc.nextInt();
+		for(int i=1;i<11;i++) {
+			System.out.println(n+" * "+i+" = "+n*i);
+		}
+		
+	}
+	
+}

@@ -1,0 +1,18 @@
+package com.demo.beans;
+
+import java.util.Scanner;
+
+public class MyClass {
+
+	public void PrintTables(int n) {
+		for(int i=1;i<11;i++) {
+			System.out.println(n+" * "+i+" = "+n*i);
+		}
+		
+	}
+
+//	public void Factorial(int a) {
+//		
+//	}
+	
+}

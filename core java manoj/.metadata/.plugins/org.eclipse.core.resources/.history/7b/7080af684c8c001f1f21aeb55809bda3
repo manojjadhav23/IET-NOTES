@@ -1,0 +1,11 @@
+package com.demo.service;
+
+import com.demo.dao.ServiceDao;
+import com.demo.dao.ServiceDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	private ServiceDao sdao;
+	public EmployeeServiceImpl() {
+		sdao = new ServiceDaoImpl();
+	}
+}

@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+public class BubbleSorting {
+
+	public static void main(String[] args) {
+		int []arr = {10,50,4,6,54,30,45};
+		System.out.println("Array befor sorting:"+Arrays.toString(arr));
+		
+		BubbleSort(arr);
+		
+		System.out.println("Array After Sorting:"+Arrays.toString(arr));
+	}
+
+	private static void BubbleSort(int[] arr) {
+		// TODO Auto-generated method stub
+		int n=arr.length;
+		int temp=0;
+		int swapcount=0;
+		for(int i=0;i<arr.length;i++) {
+			for(int j=1;j<n-i;j++) {
+				if(arr[j]<arr[i]) {
+				temp=arr[j];
+				arr[j]=arr[i];
+				arr[i]=temp;
+				swapcount++;
+				}
+		
+	}
+			System.out.println("No of Iterations:"+(i+1)+"No of Swap:"+swapcount);
+			System.out.println(Arrays.toString(arr));
+			if(swapcount==0) {
+				break;
+			}
+			swapcount=0;
+		}
+	}
+}

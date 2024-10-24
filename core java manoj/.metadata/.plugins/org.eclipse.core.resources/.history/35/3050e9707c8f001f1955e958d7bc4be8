@@ -1,0 +1,12 @@
+package com.demo.thread;
+
+import com.demo.beans.Storage;
+
+public class ConsumerThread extends Thread{
+	private Storage s;
+	
+	public ConsumerThread(Storage s) {
+		super();
+		this.s=s;
+	}
+}

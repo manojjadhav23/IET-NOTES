@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+public class BubbleSorting {
+
+	public static void main(String[] args) {
+		int []arr = {10,50,4,6,54,30,45};
+		System.out.println("Array befor sorting:"+Arrays.toString(arr));
+		
+		int[]arr1= BubbleSort(arr);
+		
+		System.out.println("Array After Sorting:"+Arrays.toString(arr1));
+	}
+
+	private static int[] BubbleSort(int[] arr) {
+		int n=arr.length;
+		int temp=0;
+		for(int i=0;i<arr.length;i++) {
+			for(int j=i+1;j<n-i;j++) {
+				temp=arr[j+1];
+				arr[j+1]=arr[j];
+				arr[j]=temp;
+			}
+		}
+		return arr;
+	}
+
+}

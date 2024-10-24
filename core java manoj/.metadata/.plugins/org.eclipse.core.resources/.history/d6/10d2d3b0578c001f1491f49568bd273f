@@ -1,0 +1,17 @@
+package com.demo.dao;
+
+import java.util.List;
+
+import com.demo.beans.Employee;
+
+public interface ServiceDao {
+
+	void ReadFile(String fname);
+
+	boolean AddNewEmployee(Employee e);
+
+	List<Employee> GetAll();
+
+	void WriteFile(String fname);
+
+}

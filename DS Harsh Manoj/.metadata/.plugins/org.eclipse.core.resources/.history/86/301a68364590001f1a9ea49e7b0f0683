@@ -1,0 +1,16 @@
+package com.demo.test;
+
+public class TestFactorial {
+
+	public static void main(String[] args) {
+		int n=Factorial(5);
+		System.out.println("(Normal Way)Factorial is:"+n);
+	}
+
+	private static int Factorial(int n) {
+		for(int i=1;i<n;i++){
+			fact=fact*i;
+		}
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.demo.beans;
+
+public class Storage {
+	private int n;
+	private boolean value; 
+	
+	public Storage() {
+		super();
+		value=false;
+	}
+	
+	public void set(int x) {
+		if(value) {
+			System.out.println("In put"+x);
+			n=x;
+			value=true;
+		}
+	}
+	public void get() {
+		if(!value) {
+			System.out.println("In get:"+n);
+			value=false;
+		}
+	}
+}
+

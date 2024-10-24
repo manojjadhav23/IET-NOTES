@@ -1,0 +1,41 @@
+package com.demo.task;
+
+import java.util.concurrent.Callable;
+
+import com.demo.search.SearchData;
+
+public class MyTask implements Callable<String> {
+	
+	private String start;
+	private String end;
+	private SearchData sdata;
+	 private String wrd;
+		public MyTask(SearchData sdata, String wrd,String start,String end) {
+			super();
+			this.sdata = sdata;
+			this.wrd = wrd;
+			this.start=start;
+			this.end=end;
+		}
+
+
+	@Override
+	public boolean call() throws Exception {
+		int sum=0;
+		boolean status = false;
+		for(int i=start.length();i<end.length();i++) {
+			status=sdata.search("read.txt", wrd);
+		}
+		 if(status) {
+			 System.out.println("word is found: "+wrd);
+		 }
+		 
+		 else {
+			 System.out.println("word is not found: "+wrd);
+		 }
+		return false;
+		
+	}
+	
+
+}

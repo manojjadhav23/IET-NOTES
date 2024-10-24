@@ -1,0 +1,64 @@
+package com.demo.dao;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.demo.beans.Employee;
+
+public class ServiceDaoImpl implements ServiceDao{
+	
+	static List<Employee> lst; 
+	static {
+		lst=new ArrayList<>();
+	}
+
+	@Override
+	public void ReadFile(String fname) {
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("empcsv.csv"));){
+			Employee e = (Employee) ois.readObject();
+			lst.add(e);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public boolean AddNewEmployee(Employee e) {
+		return lst.add(e);
+	}
+
+	@Override
+	public List<Employee> GetAll() {
+		return lst;
+	}
+
+	@Override
+	public void WriteFile(String fname) {
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("empcsv.csv"));){
+			for(Employee e:lst) {
+				oos.writeObject(e);
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+}
